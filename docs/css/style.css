@@ -162,8 +162,8 @@ img.is-rounded {
     padding-left: 2rem;
   }
   .anchor-link {
-      left: 0;
-      right: auto;
+    left: 0;
+    right: auto;
   }
 }
 
@@ -179,6 +179,6 @@ img.is-rounded {
   }
 
   .advantage-section .column:last-child, .plugin-section .column:last-child {
-      padding-left: 2rem;
+    padding-left: 2rem;
   }
 }
