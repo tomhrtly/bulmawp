@@ -189,8 +189,8 @@
         <hr>
         <div class="content">
           <h2>Child Theme</h2>
-          <p>Since BulmaWP is a foundation for WordPress development, it is recommended you create a child theme before starting any development.</p>
-          <p>This is so that any BulmaWP updates do not overwrite your work. Or, if you're feeling lazy, just download our <a href="../releases/bulmawp-child.zip">Child Theme</a>.</p>
+          <p>Since BulmaWP is a starter theme with WordPress functionality built right in, you don't need to create a child theme and instead you can start modifying the theme to what you need.</p>
+          <p>But in the case you want to make a child theme, then just follow the steps below. Or, if you're feeling lazy, just download our <a href="../releases/bulmawp-child.zip">Child Theme</a>.</p>
         </div>
         <hr>
         <article class="media">
@@ -245,16 +245,16 @@ Template: bulmawp
               </p>
 <pre>
 <span class="php">&lt;?php</span>
-  <span class="function">function</span> <span class="function-name">bulmawp_child_enqueue</span>() {
-    <span class="variable">$parent_style</span> = <span class="parameter">'bulmawp'</span>;
-    <span class="function-name">wp_enqueue_style</span>( <span class="variable">$parent_style</span>, <span class="function-name">get_template_directory_uri</span>() . <span class="parameter">'/style.css'</span> );
-    <span class="function-name">wp_enqueue_style</span>( <span class="parameter">'child-style'</span>,
-      <span class="function-name">get_stylesheet_directory_uri</span>() . '/style.css',
-      <span class="array">array</span>( <span class="variable">$parent_style</span> ),
-      <span class="function-name">wp_get_theme</span>()-><span class="function-name">get</span>(<span class="parameter">'Version'</span>)
-    );
-  }
-  <span class="function-name">add_action</span>( <span class="parameter">'wp_enqueue_scripts'</span>, <span class="parameter">'bulmawp_child_enqueue'</span>, <span class="integer">11</span> );
+<span class="function">function</span> <span class="function-name">bulmawp_child_enqueue</span>() {
+  <span class="variable">$parent_style</span> = <span class="parameter">'bulmawp'</span>;
+  <span class="function-name">wp_enqueue_style</span>( <span class="variable">$parent_style</span>, <span class="function-name">get_template_directory_uri</span>() . <span class="parameter">'/style.css'</span> );
+  <span class="function-name">wp_enqueue_style</span>( <span class="parameter">'child-style'</span>,
+    <span class="function-name">get_stylesheet_directory_uri</span>() . '/style.css',
+    <span class="array">array</span>( <span class="variable">$parent_style</span> ),
+    <span class="function-name">wp_get_theme</span>()-><span class="function-name">get</span>(<span class="parameter">'Version'</span>)
+  );
+}
+<span class="function-name">add_action</span>( <span class="parameter">'wp_enqueue_scripts'</span>, <span class="parameter">'bulmawp_child_enqueue'</span>, <span class="integer">11</span> );
 <span class="php">?&gt;</span>
 </pre>
             </div>

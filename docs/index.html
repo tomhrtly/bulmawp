@@ -162,13 +162,14 @@
           <div class="column is-6">
             <pre class="has-shadow">
 <span class="php">&lt;?php</span>
-  <span class="function">function</span> <span class="function-name">bulmawp_get_pagination_config</span>() {
-    <span class="variable">$paginationAlignment</span> = <span class="function-name">get_option</span>(<span class="parameter">'pagination_alignment'</span>);
-    <span class="function">if</span>(<span class="variable">$paginationAlignment</span> == <span class="parameter">'is-centered'</span>) {
-      <span class="array">echo</span> <span class="parameter">'is-centered'</span>;
-    } <span class="function">else if</span>(<span class="variable">$paginationAlignment</span> == <span class="parameter">'is-right'</span>) {
-      <span class="array">echo</span> <span class="parameter">'is-right'</span>;
-    }
+<span class="function">function</span> <span class="function-name">bulmawp_get_pagination_config</span>() {
+  <span class="variable">$paginationAlignment</span> = <span class="function-name">get_option</span>( <span class="parameter">'pagination_alignment'</span> );
+  <span class="function">if</span>( <span class="variable">$paginationAlignment</span> == <span class="parameter">'is-centered'</span> ) {
+    <span class="array">echo</span> <span class="parameter">'is-centered'</span>;
+  } <span class="function">else if</span>( <span class="variable">$paginationAlignment</span> == <span class="parameter">'is-right'</span> ) {
+    <span class="array">echo</span> <span class="parameter">'is-right'</span>;
+  }
+}
 <span class="php">?&gt;</span></pre>
           </div>
         </div>
