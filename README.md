@@ -1,6 +1,4 @@
-<a href="https://bulmawp.io"><img src="https://bulmawp.io/images/logo-dark.png" width="421" height="80" alt="BulmaWP Logo"></a>
-
-# [BulmaWP](https://bulmawp.io)
+<a href="https://bulmawp.io"><img src="https://bulmawp.io/images/logo-dark.png" width="421" height="80" alt="BulmaWP Logo" style="display: block; margin: 0 auto 2rem;"></a>
 
 BulmaWP is a free, open-source WordPress theme built with the powerful and flexible Bulma framework.
 
