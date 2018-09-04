@@ -1,0 +1,146 @@
+@import "../bulma/utilities/_all"
+
+$tabs-border-bottom-color: transparent
+$tabs-boxed-link-hover-border-bottom-color: transparent
+$tabs-link-active-color: $primary
+$tabs-boxed-link-active-border-color: transparent
+$tabs-boxed-link-hover-background-color: rgba(0, 0, 0, 0.05)
+$tabs-link-hover-color: $white
+$pre-background: #282c34
+$pre: #abb2bf
+
+span
+  &.is-primary
+    color: $primary
+
+section
+  &.is-primary
+    background-color: $primary
+    color: $white
+
+section
+  &.has-tabs
+    padding-bottom: 0
+    .subtitle
+      margin-bottom: 3rem
+
+section
+  &.is-primary
+    .title,
+    .subtitle
+      color: $white
+
+.github-buttons
+  margin-top: 1rem
+
+.navbar
+  & >.container
+    border-bottom-color: #eee
+    border-bottom-style: solid
+    border-bottom-width: 1px
+
+.section-title
+  margin-bottom: 4rem
+
+pre
+  border-radius: 5px
+
+pre
+  span
+    &.function
+      color: #c678dd
+  span
+    &.function-name
+      color: #61afef
+  span
+    &.parameter
+      color: #98c379
+  span
+    &.variable
+      color: #d27377
+  span
+    &.php
+      color: #be5046
+  span
+    &.array
+      color: #6eb4c0
+  span
+    &.integer
+      color: #c99b6e
+
+.has-shadow
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.20)
+
+.hero
+  &.is-font-awesome
+    background-color: #228ae6
+    border-bottom-style: solid
+    border-color: rgba(0,0,0,.1)
+    border-top-style: solid
+    border-width: .5rem
+    .hero-body
+      position: relative
+      &:before
+        background-image: url(../images/fontawesome.svg)
+        bottom: 0
+        content: ""
+        display: block
+        left: 0
+        opacity: 0.1
+        position: absolute
+        right: 0
+        top: -25px
+    a
+      color: #e8f7ff
+  p
+    .svg-inline--fa
+      margin-right: 1rem
+
+img
+  &.is-rounded
+    border-radius: 5px
+
+.media-number
+  align-items: center
+  background-color: $white-ter
+  border-radius: $radius-rounded
+  display: inline-flex
+  height: 1rem
+  justify-content: center
+  padding: 1rem
+  width: 1rem
+
+.intro-section
+  .field
+    &.is-grouped
+      justify-content: center
+
+.anchor-title
+  position: relative
+  +touch
+    padding-left: 2rem
+
+.anchor-link
+  position: absolute
+  right: calc(100% + 1rem)
+  top: 0
+  +touch
+    left: 0
+    right: auto
+
++touch
+  .has-image-center-mobile
+    text-align: center
+
++tablet
+  .foundation-section
+    .column:first-child
+      padding-right: 2rem
+  .advantage-section
+    .column:last-child
+      padding-left: 2rem
+  .plugin-section
+    .column:last-child
+      padding-left: 2rem
+
+@import "../bulma/main.sass"
