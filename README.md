@@ -11,3 +11,7 @@ BulmaWP is a free, open-source WordPress theme built with the powerful and flexi
 5. Choose the .zip file from where you downloaded it onto your computer.
 6. Click "Install Now".
 7. Click "Activate".
+
+## Pull Requests
+
+To submit a pull request, please use the theme/latest directory to help keep all changes organised and easy to see.

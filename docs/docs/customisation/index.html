@@ -5,20 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Customisation - BulmaWP</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="canonical" href="https://www.bulmawp.io">
     <link rel="shortcut icon" href="../../favicon.png">
     <script src="../../js/script.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-70809338-10"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script type="text/javascript">
-      var subscribersSiteId = '079413df-e114-4ceb-a3b7-1c80c50776c9';
-      var subscribersServiceWorkerPath = 'https://subscribers.com/?firebase-messaging-sw';
-    </script>
-    <script type="text/javascript" src="https://cdn.subscribers.com/assets/subscribers.js"></script>
   </head>
   <body>
-    <nav class="navbar is-fixed-top">
+    <nav class="navbar has-shadow is-fixed-top">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="../../">
@@ -31,11 +25,10 @@
           </div>
         </div>
         <div id="navbar" class="navbar-menu">
-          <div class="navbar-start"></div>
           <div class="navbar-end">
             <a class="navbar-item" href="../../">Home</a>
             <a class="navbar-item" href="../">Documentation</a>
-            <a class="navbar-item" href="https://github.com/tomhrtly/BulmaWP/issues">Support</a>
+            <a class="navbar-item" href="https://github.com/tomhrtly/bulmawp/issues">Support</a>
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
@@ -47,7 +40,7 @@
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-primary" href="../../releases/bulmawp-v0.2.1.zip">
+                  <a class="button is-primary" href="../../releases/bulmawp-v0.2.2.zip">
                     <span class="icon">
                       <i class="fas fa-download"></i>
                     </span>
@@ -83,28 +76,60 @@
       <div class="container">
         <div class="content">
           <h1>Customisation</h1>
-          <p>As a development foundation, BulmaWP comes with only a few features built into the core theme. Now that you've made a child theme, it's easy to change any of the functionality that BulmaWP comes with to suit your own needs.</p>
-          <p>The Bulma framework is called through the <a href="https://cdnjs.com/libraries/bulma">cdnjs CDN</a>, this is an effort to make your WordPress website lightweight and fast. We've also included Font Awesome into the theme, just for your convenience.</p>
-          <p>As Bulma and Font Awesome get updated in the future, these will be automatically added to BulmaWP so that you can never worry about missing an update again.</p>
-          <h2>Breadcrumbs</h2>
-          <p>Breadcrumbs are built into BulmaWP using the markup that is provided within the <a href="https://bulma.io/documentation/components/breadcrumb/">Bulma docs</a>. On the BulmaWP theme settings page within your WordPress installation, you are able to modify the different breadcrumb features such as size, alignment and to include Font Awesome icons etc.</p>
+          <p>As a development foundation, BulmaWP comes with only a few features built into the core theme.</p>
+          <p>The Bulma framework can be called through the <a href="https://cdnjs.com/libraries/bulma">cdnjs CDN</a> for those wanting to use Bulma out of the box. If you want to customise the Bulma framework and add your own SASS, then download the latest version from the <a href="https://bulma.io">Bulma website</a>. We've also included Font Awesome into the theme, just for your convenience.</p>
+          <p>When Bulma and Font Awesome get updated in the future, the new versions will be automatically added to BulmaWP.</p>
+          <h2 id="breadcrumbs" class="anchor-title">
+            <span>Breadcrumbs</span>
+            <a class="anchor-link" href="#breadcrumbs">#</a>
+          </h2>
+          <p>Breadcrumbs are built into BulmaWP using the markup that is provided within the <a href="https://bulma.io/documentation/components/breadcrumb/">Bulma docs</a>. On the "BulmaWP Settings" page within your WordPress installation, you are able to modify the different breadcrumb features such as size, alignment and to include Font Awesome icons etc.</p>
           <p>If you decide to use Font Awesome icons, there will be default ones already set for the homepage, category, tag and search result pages. For posts and pages, you can set these through the custom post meta box provided.</p>
           <p>But if you simply don't want to use breadcrumbs on your site, you can easily disable them on the "BulmaWP Settings" page.</p>
-          <h2>Footer</h2>
+          <h2 id="comments" class="anchor-title">
+            <span>Comments</span>
+            <a class="anchor-link" href="#comments">#</a>
+          </h2>
+          <div class="tags has-addons">
+            <span class="tag">Since</span>
+            <span class="tag is-info">0.2.2</span>
+          </div>
+          <p>BulmaWP now uses a custom comment walker which uses the <a href="https://bulma.io/documentation/layout/media-object/">media object</a> markup to display the comments for posts and pages. This new walker replaces the old columns/column layout that was being used beforehand.</p>
+          <h2 id="footer" class="anchor-title">
+            <span>Footer</span>
+            <a class="anchor-link" href="#footer">#</a>
+          </h2>
           <p>The footer is very simple to use, you can choose to use the pre-wrote copyright statement if you wish or simply write whatever you want to display in your footer.</p>
-          <h2>JavaScript</h2>
-          <p>The only JavaScript that has been added is the code provided <a href="https://bulma.io/documentation/components/navbar/#navbar-menu">within the docs</a> to toggle the class <code>is-active</code> on both the <code>navbar-burger</code> and the targeted <code>navbar-menu</code>. You can easily enqueue jQuery and replace the code with the <a href="https://bulma.io/documentation/components/navbar/#navbar-menu">jQuery alternative</a> if you wish.</p>
-          <h2>Navbar</h2>
+          <h2 id="javascript" class="anchor-title">
+            <span>JavaScript</span>
+            <a class="anchor-link" href="#javascript">#</a>
+          </h2>
+          <p>Since jQuery is already included in a new WordPress install, we have replaced this for the <a href="https://developers.google.com/speed/libraries/">Google hosted version</a> to improve site performance. The only jQuery code that has been added is the code provided <a href="https://bulma.io/documentation/components/navbar/#navbar-menu">within the docs</a> to toggle the class <code>is-active</code> on both the <code>navbar-burger</code> and the targeted <code>navbar-menu</code>.</p>
+          <h2 id="navbar" class="anchor-title">
+            <span>Navbar</span>
+            <a class="anchor-link" href="navbar">#</a>
+          </h2>
           <p>The navbar is straightforward and easy to change the styling of, Bulma offers a lot of customisation options which have been integrated well into the theme. You can add simple modifiers such as <code>is-fixed-top</code>, <code>is-fixed-bottom</code>, <code>is-transparent</code> and <code>is-spaced</code>.</p>
           <p>A custom walker was created for BulmaWP so that the markup of the navbar stays clean and lightweight without all the ugly attributes that the WordPress core includes.</p>
-          <p>If your navbar item is on the right side of the navbar, you can easily add the <code>is-right</code> modifier to a specific link within the "Menus" page of WordPress. This is also the same with <code>is-dropdown-up</code> and <code>is-boxed</code> for those using a transparent navbar.</p>
-          <h2>Page Templates</h2>
+          <h2 id="pagetemplates" class="anchor-title">
+            <span>Page Templates</span>
+            <a class="anchor-link" href="#pagetemplates">#</a>
+          </h2>
           <p>There is an extra page template which has been included, a full-width page which simply doesn't show the sidebar on the right side of the page.</p>
-          <h2>Pagination</h2>
-          <p>The pagination within BulmaWP cannot be disabled as it is a WordPress requirement, however, the pagination built into the theme is only enabled for viewing posts and not for comments. You are able to change the size, style, alignment, and the number of links shown easily without rebuilding the function yourself.</p>
-          <h2>Search Bar</h2>
+          <h2 id="pagination" class="anchor-title">
+            <span>Pagination</span>
+            <a class="anchor-link" href="#pagination">#</a>
+          </h2>
+          <p>The pagination built into the theme works with all custom post types and any custom queries, all you have to do is call the function on the page with the query present. You are able to change the size, style, alignment, and the number of links shown easily without rebuilding the function yourself.</p>
+          <h2 id="searchbar" class="anchor-title">
+            <span>Search Bar</span>
+            <a class="anchor-link" href="#searchbar">#</a>
+          </h2>
           <p>The default WordPress search bar markup has been changed to work with the Bulma framework, this has been placed in the <code>searchform.php</code> file within the directory of the BulmaWP theme. You can easily change the placeholder text, color of the search button and if you want to use an icon instead of text within the "BulmaWP Settings" page.</p>
-          <h2>Social</h2>
+          <h2 id="social" class="anchor-title">
+            <span>Social</span>
+            <a class="anchor-link" href="#social">#</a>
+          </h2>
           <p>The last customisable feature is adding social network icons to your navbar. You can add Facebook, Google Plus, Instagram, Pinterest, RSS and Twitter icons to your navbar which are shown as a child of <code>navbar-end</code>. If you do not wish any social network icons to show, just leave the fields blank on the "BulmaWP Settings" page.</p></div>
       </div>
     </section>
@@ -113,8 +138,10 @@
         <div class="container">
           <p class="title has-text-centered">
             <a href="https://www.github.com/tomhrtly/BulmaWP">
-              <i class="fab fa-github"></i>
-              Contribute to the development of BulmaWP on GitHub! 😃
+              <span class="icon is-medium">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Contribute to the development of BulmaWP on GitHub! 😃</span>
             </a>
           </p>
         </div>
@@ -129,18 +156,15 @@
               <p class="is-size-6">Keep informed about what's next for BulmaWP!</p>
             </div>
             <div class="column">
-              <form action="https://bulmawp.us18.list-manage.com/subscribe/post?u=3231dfa5a664438011fbe4f78&amp;id=5ce0cb587d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <form action="https://bulmawp.us18.list-manage.com/subscribe/post?u=3231dfa5a664438011fbe4f78&amp;id=5ce0cb587d" method="post">
                 <div class="field is-grouped">
-                    <p class="control is-expanded">
-                      <input class="input is-primary" type="email" name="EMAIL" placeholder="email@address.com">
-                      <div id="mce-responses" class="clear">
-                    		<div class="response" id="mce-error-response" style="display:none"></div>
-                    		<div class="response" id="mce-success-response" style="display:none"></div>
-                    	</div>
-                    </p>
-                    <p class="control">
-                      <input type="submit" name="Subscribe" value="Sign me up!" id="mc-embedded-subscribe" class="button is-primary is-inverted is-outlined">
-                    </p>
+                  <p class="control is-expanded">
+                    <input class="input is-primary" type="email" name="EMAIL" placeholder="email@address.com" required>
+                  </p>
+                  <p class="control">
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3231dfa5a664438011fbe4f78_5ce0cb587d" tabindex="-1" value=""></div>
+                    <input type="submit" name="Subscribe" value="Sign me up!" class="button is-primary is-inverted is-outlined">
+                  </p>
                 </div>
               </form>
             </div>
@@ -150,18 +174,16 @@
     </section>
     <footer class="footer">
       <div class="container">
-        <div class="level">
-          <div class="level-left">
-            <div class="level-item">
-              <a class="navbar-item" href="../../">
+        <div class="columns is-vcentered">
+          <div class="column">
+            <figure class="has-image-center-mobile">
+              <a href="../../">
                 <img src="../../images/logo-dark-small.png" alt="BulmaWP Logo" width="148" height="28">
               </a>
-            </div>
+            </figure>
           </div>
-          <div class="level-right">
-            <div class="level-item">
-              <p class="has-text-right-tablet has-text-centered-mobile">A project by <a href="https://tomhrtly.com/">Tom Hartley</a>. Hosted by <a href="https://github.com/">GitHub</a>.</p>
-            </div>
+          <div class="column">
+            <p class="has-text-right-tablet has-text-centered-mobile">A project by <a href="https://tomhrtly.com/">Tom Hartley</a>. Hosted by <a href="https://github.com/">GitHub</a>.</p>
           </div>
         </div>
       </div>

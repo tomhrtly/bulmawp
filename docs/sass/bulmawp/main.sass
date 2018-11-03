@@ -1,4 +1,4 @@
-@import "../bulma/utilities/_all"
+@import "../bulma/utilities/all"
 
 $tabs-border-bottom-color: transparent
 $tabs-boxed-link-hover-border-bottom-color: transparent
@@ -17,54 +17,40 @@ section
   &.is-primary
     background-color: $primary
     color: $white
-
-section
   &.has-tabs
     padding-bottom: 0
     .subtitle
       margin-bottom: 3rem
-
-section
   &.is-primary
     .title,
     .subtitle
       color: $white
+  &.advantage-section,
+  &.foundation-section,
+  &.plugin-section
+    p
+      font-size: $size-5
+  .section-title
+    margin-bottom: 4rem
 
 .github-buttons
   margin-top: 1rem
 
-.navbar
-  & >.container
-    border-bottom-color: #eee
-    border-bottom-style: solid
-    border-bottom-width: 1px
-
-.section-title
-  margin-bottom: 4rem
-
 pre
-  border-radius: 5px
-
-pre
+  border-radius: $radius
   span
     &.function
       color: #c678dd
-  span
     &.function-name
       color: #61afef
-  span
     &.parameter
       color: #98c379
-  span
     &.variable
       color: #d27377
-  span
     &.php
       color: #be5046
-  span
     &.array
       color: #6eb4c0
-  span
     &.integer
       color: #c99b6e
 
@@ -72,6 +58,8 @@ pre
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.20)
 
 .hero
+  .icon
+    margin-right: 1rem
   &.is-font-awesome
     background-color: #228ae6
     border-bottom-style: solid
@@ -92,13 +80,10 @@ pre
         top: -25px
     a
       color: #e8f7ff
-  p
-    .svg-inline--fa
-      margin-right: 1rem
 
 img
   &.is-rounded
-    border-radius: 5px
+    border-radius: $radius
 
 .media-number
   align-items: center
@@ -143,4 +128,4 @@ img
     .column:last-child
       padding-left: 2rem
 
-@import "../bulma/main.sass"
+@import "../bulma/main"
