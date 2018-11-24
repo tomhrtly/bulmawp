@@ -1,0 +1,74 @@
+@import "../bulma/utilities/all"
+
+$tabs-border-bottom-color: transparent
+$tabs-boxed-link-hover-border-bottom-color: transparent
+$tabs-link-active-color: $primary
+$tabs-boxed-link-active-border-color: transparent
+$tabs-boxed-link-hover-background-color: rgba(0, 0, 0, 0.05)
+$tabs-link-hover-color: $white
+$pre-background: #282c34
+$pre: #abb2bf
+
+$twitter: #1da1f2
+$twitter-invert: findColorInvert($twitter)
+
+$widescreen-enabled: false
+$fullscreen-enabled: false
+
+span
+  &.is-primary
+    color: $primary
+
+section
+  &.is-primary
+    background-color: $primary
+    color: $white
+  &.has-tabs
+    padding-bottom: 0
+    .subtitle
+      margin-bottom: 3rem
+  &.is-primary
+    .title,
+    .subtitle
+      color: $white
+
+.github-buttons
+  margin-top: 1rem
+
+.hero
+  .icon
+    margin-right: 1rem
+
+.media-number
+  align-items: center
+  background-color: $white-ter
+  border-radius: $radius-rounded
+  display: inline-flex
+  height: 1rem
+  justify-content: center
+  padding: 1rem
+  width: 1rem
+
+.intro-section
+  .field
+    &.is-grouped
+      justify-content: center
+
+.anchor-title
+  padding-top: 1.5rem
+  position: relative
+  +touch
+    padding-left: 2rem
+
+.anchor-link
+  position: absolute
+  right: calc(100% + 1rem)
+  top: 1.5rem
+  +touch
+    left: 0
+    right: auto
+
+$custom-colors: ("twitter": ($twitter, $twitter-invert))
+$colors: mergeColorMaps(("dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert)), $custom-colors)
+
+@import "../bulma/main"
