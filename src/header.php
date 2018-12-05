@@ -24,55 +24,55 @@
             endif;
             ?>
           </a>
-          <div class="navbar-burger burger" data-target="navbar">
+          <div class="navbar-burger burger">
             <span></span>
             <span></span>
             <span></span>
           </div>
         </div>
-        <div id="navbar" class="navbar-menu">
+        <div class="navbar-menu">
           <div class="navbar-start">
             <?php
-              wp_nav_menu( array(
-                'theme_location'  => 'navbar_start',
-                'menu'            => '',
-            		'container'       => '',
-            		'container_class' => '',
-            		'container_id'    => '',
-            		'menu_class'      => '',
-            		'menu_id'         => '',
-            		'echo'            => true,
-            		'fallback_cb'     => 'BulmaWP_Navbar_Walker::fallback',
-            		'before'          => '',
-            		'after'           => '',
-            		'link_before'     => '',
-            		'link_after'      => '',
-                'items_wrap'      => '%3$s',
-                'depth'           => 0,
-                'walker' => new BulmaWP_Navbar_Walker
-              ));
+            wp_nav_menu( array(
+              'theme_location'  => 'navbar_start',
+              'menu'            => '',
+          		'container'       => '',
+          		'container_class' => '',
+          		'container_id'    => '',
+          		'menu_class'      => '',
+          		'menu_id'         => '',
+          		'echo'            => true,
+          		'fallback_cb'     => 'BulmaWP_Navbar_Walker::fallback',
+          		'before'          => '',
+          		'after'           => '',
+          		'link_before'     => '',
+          		'link_after'      => '',
+              'items_wrap'      => '%3$s',
+              'depth'           => 0,
+              'walker'          => new BulmaWP_Navbar_Walker
+            ));
             ?>
           </div>
           <div class="navbar-end">
             <?php
-              wp_nav_menu( array(
-                'theme_location' => 'navbar_end',
-                'menu'            => '',
-            		'container'       => '',
-            		'container_class' => '',
-            		'container_id'    => '',
-            		'menu_class'      => '',
-            		'menu_id'         => '',
-            		'echo'            => true,
-            		'fallback_cb'     => 'BulmaWP_Navbar_Walker::fallback',
-            		'before'          => '',
-            		'after'           => '',
-            		'link_before'     => '',
-            		'link_after'      => '',
-                'items_wrap'      => '%3$s',
-                'depth'           => 0,
-                'walker' => new BulmaWP_Navbar_Walker
-              ));
+            wp_nav_menu( array(
+              'theme_location'  => 'navbar_end',
+              'menu'            => '',
+          		'container'       => '',
+          		'container_class' => '',
+          		'container_id'    => '',
+          		'menu_class'      => '',
+          		'menu_id'         => '',
+          		'echo'            => true,
+          		'fallback_cb'     => 'BulmaWP_Navbar_Walker::fallback',
+          		'before'          => '',
+          		'after'           => '',
+          		'link_before'     => '',
+          		'link_after'      => '',
+              'items_wrap'      => '%3$s',
+              'depth'           => 0,
+              'walker'          => new BulmaWP_Navbar_Walker
+            ));
             ?>
             <div class="field is-grouped">
               <a class="navbar-item">
