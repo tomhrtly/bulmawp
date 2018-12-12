@@ -69,10 +69,10 @@ function bulmawp_breadcrumbs() {
 		}
 		else if( is_page() ) {
 			if( $post->post_parent ) {
-				$anc = get_post_ancestors( $post->ID );
-				$anc = array_reverse( $anc );
+				$ancestors = get_post_ancestors( $post->ID );
+				$ancestors = array_reverse( $ancestors );
 				if( !isset($parents) ) $parents = null;
-				foreach( $anc as $ancestor ) {
+				foreach( $ancestors as $ancestor ) {
 					$parents.= '<li><a href="' . get_permalink( $ancestor ) . '">' . get_the_title( $ancestor ) . '</a></li>';
 				}
 				echo $parents;
@@ -95,12 +95,12 @@ function bulmawp_breadcrumbs() {
 			echo '<span>', $get_term_name, '</span></a></li>';
 		}
 		else if( is_day() ) {
-			echo '<li><a href="', get_year_link(get_the_time( 'Y' )), '">', get_the_time( 'Y' ), ' Archives</a></li>';
-			echo '<li><a href="', get_month_link(get_the_time( 'Y' ) , get_the_time( 'm' )), '">', get_the_time( 'M' ), ' Archives</a></li>';
+			echo '<li><a href="', get_year_link( get_the_time( 'Y' ) ), '">', get_the_time( 'Y' ), ' Archives</a></li>';
+			echo '<li><a href="', get_month_link( get_the_time( 'Y' ) , get_the_time( 'm' ) ), '">', get_the_time( 'M' ), ' Archives</a></li>';
 			echo '<li class="is-active"><a href="#" aria-current="page">', get_the_time( 'jS' ), '', get_the_time( 'M' ), ' Archives</a></li>';
 		}
 		else if( is_month() ) {
-			echo '<li><a href="', get_year_link(get_the_time( 'Y' )), '">', get_the_time( 'Y' ), ' Archives</a></li>';
+			echo '<li><a href="', get_year_link( get_the_time( 'Y' ) ), '">', get_the_time( 'Y' ), ' Archives</a></li>';
 			echo '<li>', get_the_time( 'M' ), ' Archives</li>';
 		}
 		else if( is_year() ) {
@@ -139,9 +139,9 @@ function bulmawp_enqueue() {
 
 	wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', '', '3.3.1', true );
 	wp_enqueue_script( 'bulmawp-script', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '1.0', true );
-  wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.6.0/js/all.js', '', '5.6.0', true );
+  wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.6.1/js/all.js', '', '5.6.1', true );
 
-	if( is_singular() ) {
+	if( is_single() && comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
@@ -187,6 +187,7 @@ function bulmawp_limit_depth( $hook ) {
 	if( $hook != 'nav-menus.php' ) {
 		return;
 	}
+
 	wp_add_inline_script( 'nav-menu', 'wpNavMenu.options.globalMaxDepth = 1;', 'after' );
 }
 
