@@ -47,38 +47,38 @@
 //+fullhd
   +typography-size('fullhd')
 
-$alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'right': 'right')
+$alignments: ('centered': 'center',)
 
 @each $alignment, $text-align in $alignments
   .has-text-#{$alignment}
     text-align: #{$text-align} !important
 
-@each $alignment, $text-align in $alignments
-  //+mobile
+//@each $alignment, $text-align in $alignments
+  +mobile
     .has-text-#{$alignment}-mobile
       text-align: #{$text-align} !important
   +tablet
     .has-text-#{$alignment}-tablet
       text-align: #{$text-align} !important
-  //+tablet-only
+  +tablet-only
     .has-text-#{$alignment}-tablet-only
       text-align: #{$text-align} !important
-  //+touch
+  +touch
     .has-text-#{$alignment}-touch
       text-align: #{$text-align} !important
-  //+desktop
+  +desktop
     .has-text-#{$alignment}-desktop
       text-align: #{$text-align} !important
-  //+desktop-only
+  +desktop-only
     .has-text-#{$alignment}-desktop-only
       text-align: #{$text-align} !important
-  //+widescreen
+  +widescreen
     .has-text-#{$alignment}-widescreen
       text-align: #{$text-align} !important
-  //+widescreen-only
+  +widescreen-only
     .has-text-#{$alignment}-widescreen-only
       text-align: #{$text-align} !important
-  //+fullhd
+  +fullhd
     .has-text-#{$alignment}-fullhd
       text-align: #{$text-align} !important
 
@@ -105,10 +105,10 @@ $alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'rig
   .has-background-#{$name}
     background-color: $color !important
 
-//@each $name, $shade in $shades
+@each $name, $shade in $shades
   .has-text-#{$name}
     color: $shade !important
-  .has-background-#{$name}
+  //.has-background-#{$name}
     background-color: $shade !important
 
 //.has-text-weight-light
@@ -122,7 +122,7 @@ $alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'rig
 
 // Visibility
 
-$displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
+//$displays: 'block' 'flex' 'inline' 'inline-block' 'inline-flex'
 
 //@each $display in $displays
   .is-#{$display}

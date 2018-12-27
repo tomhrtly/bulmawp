@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="canonical" href="https://www.bulmawp.io">
     <link rel="shortcut icon" href="favicon.png">
-    <script src="assets/js/script.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-70809338-10"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body>
     <nav class="navbar has-shadow">
@@ -56,7 +53,7 @@
       <div class="container has-text-centered">
         <img src="assets/img/logo-dark.png" width="421" height="80" alt="BulmaWP Logo">
         <h1 class="subtitle">A free WordPress starter theme based on the Bulma CSS framework.</h1>
-        <div class="field is-grouped">
+        <div class="field is-grouped is-grouped-centered">
           <p class="control">
             <a href="releases/bulmawp-v0.3.zip" class="button is-large is-primary">
               <span class="icon">
@@ -182,18 +179,16 @@
         </div>
       </div>
     </section>
-    <section class="hero is-dark is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns">
-            <div class="column has-text-centered">
-              <a href="https://www.github.com/tomhrtly/BulmaWP">
-                <span class="icon is-medium">
-                  <i class="fab fa-2x fa-github"></i>
-                </span>
-                <span class="title">Contribute to BulmaWP by submitting a pull request on GitHub!</span>
-              </a>
-            </div>
+    <section class="section github-section">
+      <div class="container has-text-centered">
+        <div class="columns">
+          <div class="column">
+            <a href="https://github.com/tomhrtly/bulmawp">
+              <span class="icon is-medium">
+                <i class="fab fa-github fa-lg"></i>
+              </span>
+              <span>Contribute by submitting a pull request on GitHub!</span>
+            </a>
           </div>
         </div>
       </div>
@@ -208,12 +203,12 @@
             </div>
             <div class="column">
               <form action="https://bulmawp.us18.list-manage.com/subscribe/post?u=3231dfa5a664438011fbe4f78&amp;id=5ce0cb587d" method="post">
-                <div class="field is-grouped">
+                <div class="field is-grouped is-grouped-right">
                   <p class="control is-expanded">
                     <input class="input is-primary" type="email" name="EMAIL" placeholder="email@address.com" required>
                   </p>
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3231dfa5a664438011fbe4f78_5ce0cb587d" tabindex="-1" value=""></div>
                   <p class="control">
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3231dfa5a664438011fbe4f78_5ce0cb587d" tabindex="-1" value=""></div>
                     <input type="submit" name="Subscribe" value="Sign me up!" class="button is-primary is-inverted is-outlined">
                   </p>
                 </div>
@@ -225,17 +220,22 @@
     </section>
     <footer class="footer">
       <div class="container">
-        <div class="columns is-vcentered">
+        <div class="columns">
           <div class="column">
-            <a href="">
-              <img src="assets/img/logo-dark-small.png" alt="BulmaWP Logo" width="148" height="28">
-            </a>
-          </div>
-          <div class="column">
-            <p class="has-text-right-tablet">A project by <a href="https://tomhrtly.com/">Tom Hartley</a>. Hosted by <a href="https://github.com/">GitHub</a>.</p>
+            <div class="content">
+              <p class="has-text-grey">
+                Source code licensed <a href="https://opensource.org/licenses/mit-license.php" class="has-text-grey-dark">MIT</a>. Website content licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="has-text-grey-dark">CC BY-NC-SA 4.0</a>.
+              </p>
+              <p class="has-text-grey">
+                A project by @<a href="https://twitter.com/tomhrtly/" class="has-text-grey-dark">tomhrtly</a>. Hosted on <a href="https://github.com/" class="has-text-grey-dark">GitHub</a>.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </footer>
+    <script src="assets/js/script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-70809338-10"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>

@@ -65,7 +65,6 @@ $help-size: $size-small !default
       color: rgba($input-disabled-color, 0.3)
 
 .input,
-.textarea
   +input
   box-shadow: $input-shadow
   max-width: 100%
@@ -484,7 +483,7 @@ $help-size: $size-small !default
       justify-content: center
     &.is-grouped-right
       justify-content: flex-end
-    &.is-grouped-multiline
+    //&.is-grouped-multiline
       flex-wrap: wrap
       & > .control
         &:last-child,
@@ -522,7 +521,7 @@ $help-size: $size-small !default
       font-size: $size-large
       padding-top: 0.375em
 
-.field-body
+//.field-body
   .field .field
     margin-bottom: 0
   +tablet

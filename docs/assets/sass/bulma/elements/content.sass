@@ -20,7 +20,7 @@ $content-table-foot-cell-color: $text-strong !default
 .content
   +block
   // Inline
-  li + li
+  //li + li
     margin-top: 0.25em
   // Block
   p,
@@ -65,15 +65,15 @@ $content-table-foot-cell-color: $text-strong !default
   h6
     font-size: 1em
     margin-bottom: 1em
-  blockquote
+  //blockquote
     background-color: $content-blockquote-background-color
     border-left: $content-blockquote-border-left
     padding: $content-blockquote-padding
-  ol
+  //ol
     list-style: decimal outside
     margin-left: 2em
     margin-top: 1em
-  ul
+  //ul
     list-style: disc outside
     margin-left: 2em
     margin-top: 1em
@@ -82,9 +82,9 @@ $content-table-foot-cell-color: $text-strong !default
       margin-top: 0.5em
       ul
         list-style-type: square
-  dd
+  //dd
     margin-left: 2em
-  figure
+  //figure
     margin-left: 2em
     margin-right: 2em
     text-align: center
@@ -96,16 +96,16 @@ $content-table-foot-cell-color: $text-strong !default
       display: inline-block
     figcaption
       font-style: italic
-  pre
+  //pre
     +overflow-touch
     overflow-x: auto
     padding: $content-pre-padding
     white-space: pre
     word-wrap: normal
-  sup,
-  sub
+  //sup,
+  //sub
     font-size: 75%
-  table
+  //table
     width: 100%
     td,
     th
@@ -133,9 +133,9 @@ $content-table-foot-cell-color: $text-strong !default
           th
             border-bottom-width: 0
   // Sizes
-  &.is-small
+  //&.is-small
     font-size: $size-small
-  &.is-medium
+  //&.is-medium
     font-size: $size-medium
-  &.is-large
+  //&.is-large
     font-size: $size-large
