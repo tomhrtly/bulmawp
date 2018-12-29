@@ -10,6 +10,26 @@ $widescreen-enabled: false
 $fullscreen-enabled: false
 
 section
+  &.flexcarousel-section
+    background-color: #158cd8
+    font-family: 'Bree Serif', serif
+    font-size: $size-5
+    padding-bottom: 1.25rem
+    padding-top: 1.25rem
+    position: relative
+    transition: all .2s ease-in-out
+    &:hover
+      transform: scale(1.10)
+    .overlay
+      background-image: url(http://flexcarousel.com/assets/img/pattern.png)
+      bottom: 0
+      left: 0
+      opacity: 0.3
+      position: absolute
+      right: 0
+      top: 0
+    a
+      color: #fff
   &.github-section
     background-color: $black-ter
     padding-bottom: 1rem
