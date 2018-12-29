@@ -17,11 +17,8 @@ section
     padding-bottom: 1.25rem
     padding-top: 1.25rem
     position: relative
-    transition: all .2s ease-in-out
-    &:hover
-      transform: scale(1.10)
     .overlay
-      background-image: url(http://flexcarousel.com/assets/img/pattern.png)
+      background-image: url(https://flexcarousel.com/assets/img/pattern.png)
       bottom: 0
       left: 0
       opacity: 0.3
@@ -30,6 +27,10 @@ section
       top: 0
     a
       color: #fff
+    p
+      transition: all .2s ease-in-out
+      &:hover
+        transform: scale(1.10)
   &.github-section
     background-color: $black-ter
     padding-bottom: 1rem
