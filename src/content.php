@@ -18,9 +18,6 @@
       echo apply_filters( 'the_date', get_the_date(), get_option( 'date_format' ), '', '' );
       ?> / <a href="<?php the_permalink(); ?>#comments"><?php comments_number( '0 comments', '1 comment', '% comments' ); ?></a>
     </p>
-    <?php
-    if( has_tag() ) : echo the_tags( '<p class="is-size-7">Tags: ', ', ', '</p>' ); endif;
-    the_excerpt();
-    ?>
+    <?php the_excerpt(); ?>
   </div>
 </div>
