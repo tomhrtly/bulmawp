@@ -1,8 +1,8 @@
 <?php
 /**
  * @package bulmawp
- * @since 0.1
- * @version 0.3
+ * @since 0.1.0
+ * @version 0.4.0
  */
 
 if ( ! class_exists( 'BulmaWP_Navbar_Walker' ) ) {
@@ -16,7 +16,7 @@ if ( ! class_exists( 'BulmaWP_Navbar_Walker' ) ) {
 		 * Start Level.
 		 *
 		 * @see    Walker::start_lvl()
-		 * @since  0.1
+		 * @since  0.1.0
 		 *
 		 * @access public
 		 *
@@ -34,7 +34,7 @@ if ( ! class_exists( 'BulmaWP_Navbar_Walker' ) ) {
 		 * End Level.
 		 *
 		 * @see    Walker::end_lvl()
-		 * @since  0.1
+		 * @since  0.1.0
 		 *
 		 * @access public
 		 *
@@ -52,7 +52,7 @@ if ( ! class_exists( 'BulmaWP_Navbar_Walker' ) ) {
 		 * Start El.
 		 *
 		 * @see    Walker::start_el()
-		 * @since  0.1
+		 * @since  0.1.0
 		 *
 		 * @access public
 		 *
@@ -118,7 +118,7 @@ if ( ! class_exists( 'BulmaWP_Navbar_Walker' ) ) {
 		 * End El.
 		 *
 		 * @see    Walker::end_el()
-		 * @since  0.1
+		 * @since  0.1.0
 		 *
 		 * @access public
 		 *
@@ -146,7 +146,7 @@ if ( ! class_exists( 'BulmaWP_Navbar_Walker' ) ) {
 		 * This method shouldn't be called directly, use the walk() method instead.
 		 *
 		 * @see    Walker::start_el()
-		 * @since  0.1
+		 * @since  0.1.0
 		 *
 		 * @access public
 		 *

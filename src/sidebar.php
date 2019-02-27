@@ -1,8 +1,8 @@
 <?php
 /**
  * @package bulmawp
- * @since 0.1
- * @version 0.3
+ * @since 0.1.0
+ * @version 0.4.0
  */
 ?>
 <div class="column is-3">

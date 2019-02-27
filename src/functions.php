@@ -1,14 +1,14 @@
 <?php
 /**
  * @package bulmawp
- * @since 0.1
- * @version 0.3
+ * @since 0.1.0
+ * @version 0.4.0
  */
 
 /**
  * Displays the breadcrumbs on all pages except the homepage.
  *
- * @since 0.1
+ * @since 0.1.0
  *
  * @global $post, $wp_query
  */
@@ -21,7 +21,7 @@ function bulmawp_breadcrumbs() {
 		echo '<ul>';
 		echo '<li><a href="', get_home_url(), '">';
 		echo '<span class="icon"><i class="fas fa-home"></i></span>';
-		echo '<span>Home</span></a></li>';
+		echo '<span>', __( 'Home' ), '</span></a></li>';
 		if( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
 			echo '<li class="is-active"><a href="#" aria-current="page">';
 			echo '<span class="icon"><i class="fas fa-calendar"></i></span>';
@@ -95,21 +95,21 @@ function bulmawp_breadcrumbs() {
 			echo '<span>', $get_term_name, '</span></a></li>';
 		}
 		else if( is_day() ) {
-			echo '<li><a href="', get_year_link( get_the_time( 'Y' ) ), '">', get_the_time( 'Y' ), ' Archives</a></li>';
-			echo '<li><a href="', get_month_link( get_the_time( 'Y' ) , get_the_time( 'm' ) ), '">', get_the_time( 'M' ), ' Archives</a></li>';
-			echo '<li class="is-active"><a href="#" aria-current="page">', get_the_time( 'jS' ), '', get_the_time( 'M' ), ' Archives</a></li>';
+			echo '<li><a href="', get_year_link( get_the_time( 'Y' ) ), '">', get_the_time( 'Y' ), __( ' Archives' ), '</a></li>';
+			echo '<li><a href="', get_month_link( get_the_time( 'Y' ) , get_the_time( 'm' ) ), '">', get_the_time( 'M' ), __( ' Archives' ), '</a></li>';
+			echo '<li class="is-active"><a href="#" aria-current="page">', get_the_time( 'jS' ), '', get_the_time( 'M' ), __( ' Archives' ), '</a></li>';
 		}
 		else if( is_month() ) {
-			echo '<li><a href="', get_year_link( get_the_time( 'Y' ) ), '">', get_the_time( 'Y' ), ' Archives</a></li>';
-			echo '<li>', get_the_time( 'M' ), ' Archives</li>';
+			echo '<li><a href="', get_year_link( get_the_time( 'Y' ) ), '">', get_the_time( 'Y' ), __( ' Archives' ), '</a></li>';
+			echo '<li>', get_the_time( 'M' ), __( ' Archives' ), '</li>';
 		}
 		else if( is_year() ) {
-			echo '<li class="is-active"><a href="#" aria-current="page">', get_the_time( 'Y' ), ' Archives</a></li>';
+			echo '<li class="is-active"><a href="#" aria-current="page">', get_the_time( 'Y' ), __( ' Archives' ), '</a></li>';
 		}
 		else if( is_author() ) {
 			global $author;
 			$userdata = get_userdata( $author );
-			echo '<li class="is-active"><a href="#" aria-current="page">', 'Author:', $userdata->display_name, '</a></li>';
+			echo '<li class="is-active"><a href="#" aria-current="page">', __( 'Author:' ), $userdata->display_name, '</a></li>';
 		}
 		else if( get_query_var( 'paged' ) ) {
 			echo '<li class="is-active"><a href="#" aria-current="page">', __( 'Page ' ), '', get_query_var( 'paged' ), '</a></li>';
@@ -117,7 +117,7 @@ function bulmawp_breadcrumbs() {
 		else if( is_search() ) {
 			echo '<li class="is-active"><a href="#" aria-current="page">';
 			echo '<span class="icon"><i class="fas fa-search"></i></span>';
-			echo '<span>Search results for: ', get_search_query(), '</span></a></li>';
+			echo '<span>', __( 'Search results for: ' ), get_search_query(), '</span></a></li>';
 		}
     echo '</ul>';
     echo '</nav>';
@@ -128,17 +128,19 @@ function bulmawp_breadcrumbs() {
 /**
  * Enqueues the CSS and JS for the front-end and back-end.
  *
- * @since 0.1
+ * @since 0.1.0
  * @since 0.2.2 Added enqueue "comment-reply"
  */
 
 function bulmawp_enqueue() {
-	wp_enqueue_style( 'bulmawp', get_template_directory_uri() . '/assets/css/style.css', '', '0.2.2' );
+	wp_deregister_style( 'wp-block-library' );
+
+	wp_enqueue_style( 'bulmawp-style', get_template_directory_uri() . '/assets/css/style.css', '', '0.4.0' );
 
 	wp_deregister_script( 'jquery' );
 
 	wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', '', '3.3.1', true );
-	wp_enqueue_script( 'bulmawp-script', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'bulmawp-script', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '0.4.0', true );
   wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/releases/v5.7.2/js/all.js', '', '5.7.2', true );
 
 	if( is_single() && comments_open() ) {
@@ -152,7 +154,7 @@ add_action( 'wp_enqueue_scripts', 'bulmawp_enqueue' );
 /**
  * Requires theme files needed for front-end and back-end.
  *
- * @since 0.1
+ * @since 0.1.0
  */
 
 require get_template_directory() . '/inc/navbar-walker.php';
@@ -162,8 +164,8 @@ require get_template_directory() . '/inc/comment-walker.php';
 /**
  * Registers the menus and limits the menu depth to just one child.
  *
- * @since 0.1
- * @since 0.2 Seperate menus for "navbar-start" and "navbar-end"
+ * @since 0.1.0
+ * @since 0.2.0 Seperate menus for "navbar-start" and "navbar-end"
  */
 
 function bulmawp_register_menus() {
@@ -173,10 +175,11 @@ function bulmawp_register_menus() {
 
 add_action( 'after_setup_theme', 'bulmawp_register_menus' );
 
+
 /**
  * Limits the menu depth to 1 child as multi-level structures are not supported with Bulma out of the box.
  *
- * @since  0.1
+ * @since 0.1.0
  *
  * @param string $hook
  *
@@ -197,79 +200,79 @@ add_action( 'admin_enqueue_scripts', 'bulmawp_limit_depth' );
 /**
  * Displays the pagination on the homepage.
  *
- * @since 0.1
+ * @since 0.1.0
  *
  * @global $wp_query
  */
 
 function bulmawp_pagination() {
 	if( is_singular() ) {
-		return;
-	}
-	global $wp_query;
-	if( $wp_query->max_num_pages <= 1 ) {
-		return;
-	}
-	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-	$max = intval( $wp_query->max_num_pages );
-	if( $paged >= 1 ) {
-		$links[] = $paged;
-	}
-	if( $paged >= 3 ) {
-		$links[] = $paged - 1;
-	}
-	if( ( $paged + 2 ) <= $max ) {
-		$links[] = $paged + 1;
-	}
-	echo '<nav class="pagination" role="navigation" aria-label="pagination">';
-	if ( get_previous_posts_link() ) {
-		printf( '%s', '', get_previous_posts_link( 'Previous' ) );
-	}
-	if ( get_next_posts_link() ) {
-		printf( '%s', '', get_next_posts_link( 'Next page' ) );
-	}
-	echo '<ul class="pagination-list">';
-	if( ! in_array( 1, $links ) ) {
-		$class = 1 == $paged ? ' is-current' : '';
-		$aria_current = 1 == $paged ? ' aria-current="page"' : '';
-		printf( '<li><a href="%s" class="pagination-link%s" aria-label="Goto page 1"%s>%s</a></li>', esc_url( get_pagenum_link( 1 ) ), $class, $aria_current, '1' );
-		if ( ! in_array( 2, $links ) ) {
-			echo '<li><span class="pagination-ellipsis">&hellip;</span></li>';
-		}
-	}
-	sort( $links );
-	foreach ( (array) $links as $link ) {
-		$class = $paged == $link ? ' is-current' : '';
-		$aria_current = $paged == $link ? ' aria-current="page"' : '';
-		printf( '<li><a href="%s" class="pagination-link%s" aria-label="Goto page %s"%s>%s</a></li>', esc_url( get_pagenum_link( $link ) ), $class, $link, $aria_current, $link );
-	}
-	if ( ! in_array( $max, $links ) ) {
-		if ( ! in_array( $max - 1, $links ) ) {
-			echo '<li><span class="pagination-ellipsis">&hellip;</span></li>';
-		}
-		$class = $paged == $max ? ' is-current' : '';
-		$aria_current = $paged == $max ? ' aria-current="page"' : '';
-		printf( '<li><a href="%s" class="pagination-link%s" aria-label="Goto page %s"%s>%s</a></li>', esc_url( get_pagenum_link( $max ) ), $class, $max, $aria_current, $max );
-	}
-	echo '</ul></nav>';
-}
+ 		return;
+ 	}
+ 	global $wp_query;
+ 	if( $wp_query->max_num_pages <= 1 ) {
+ 		return;
+ 	}
+ 	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+ 	$max = intval( $wp_query->max_num_pages );
+ 	if( $paged >= 1 ) {
+ 		$links[] = $paged;
+ 	}
+ 	if( $paged >= 3 ) {
+ 		$links[] = $paged - 1;
+ 	}
+ 	if( ( $paged + 2 ) <= $max ) {
+ 		$links[] = $paged + 1;
+ 	}
+ 	echo '<nav class="pagination" role="navigation" aria-label="pagination">';
+	if( get_previous_posts_link() ) {
+ 		printf( '%s', get_previous_posts_link( 'Previous' ) );
+ 	}
+ 	if( get_next_posts_link() ) {
+ 		printf( '%s', get_next_posts_link( 'Next' ) );
+ 	}
+ 	echo '<ul class="pagination-list">';
+ 	if( ! in_array( 1, $links ) ) {
+ 		$class = 1 == $paged ? ' is-current' : '';
+ 		$aria_current = 1 == $paged ? ' aria-current="page"' : '';
+ 		printf( '<li><a href="%s" class="pagination-link%s" aria-label="Go to page 1"%s>%s</a></li>', esc_url( get_pagenum_link( 1 ) ), $class, $aria_current, '1' );
+ 		if( ! in_array( 2, $links ) ) {
+ 			echo '<li><span class="pagination-ellipsis">&hellip;</span></li>' . "\n";
+ 		}
+ 	}
+ 	sort( $links );
+ 	foreach( ( array ) $links as $link ) {
+ 		$class = $paged == $link ? ' is-current' : '';
+ 		$aria_current = $paged == $link ? ' aria-current="page"' : '';
+ 		printf( '<li><a href="%s" class="pagination-link%s" aria-label="Go to page %s"%s>%s</a></li>', esc_url( get_pagenum_link( $link ) ), $class, $link, $aria_current, $link );
+ 	}
+ 	if( ! in_array( $max, $links ) ) {
+ 		if( ! in_array( $max - 1, $links ) ) {
+ 			echo '<li><span class="pagination-ellipsis">&hellip;</span></li>' . "\n";
+ 		}
+ 		$class = $paged == $max ? ' is-current' : '';
+ 		$aria_current = $paged == $max ? ' aria-current="page"' : '';
+ 		printf( '<li><a href="%s" class="pagination-link%s" aria-label="Goto page %s"%s>%s</a></li>', esc_url( get_pagenum_link( $max ) ), $class, $max, $aria_current, $max );
+ 	}
+ 	echo '</ul></nav>';
+ }
 
-add_filter( 'next_posts_link_attributes', 'bulmawp_next_posts_link_class' );
-add_filter( 'previous_posts_link_attributes', 'bulmawp_previous_posts_link_class' );
+ add_filter( 'next_posts_link_attributes', 'bulmawp_next_posts_link_class' );
+ add_filter( 'previous_posts_link_attributes', 'bulmawp_previous_posts_link_class' );
 
-function bulmawp_next_posts_link_class() {
-	return 'class="pagination-next"';
-}
+ function bulmawp_next_posts_link_class() {
+ 	return 'class="pagination-next"';
+ }
 
-function bulmawp_previous_posts_link_class() {
-	return 'class="pagination-previous"';
-}
+ function bulmawp_previous_posts_link_class() {
+ 	return 'class="pagination-previous"';
+ }
 
 
 /**
  * Registers the sidebar.
  *
- * @since 0.1
+ * @since 0.1.0
  */
 
 function bulmawp_sidebar() {
@@ -289,7 +292,7 @@ add_action( 'widgets_init', 'bulmawp_sidebar' );
 /**
  * Adds theme support.
  *
- * @since 0.1
+ * @since 0.1.0
  */
 
 add_theme_support( 'automatic-feed-links' );

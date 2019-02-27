@@ -2,7 +2,7 @@
 /**
  * @package bulmawp
  * @since 0.2.2
- * @version 0.3
+ * @version 0.4.0
  */
 
 if ( ! class_exists( 'BulmaWP_Comment_Walker' ) ) {
