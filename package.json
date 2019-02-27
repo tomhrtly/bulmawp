@@ -1,0 +1,34 @@
+{
+  "name": "bulmawp",
+  "version": "0.4.0",
+  "description": "A free WordPress starter theme based on the Bulma CSS framework.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs-build": "npm run docs-build-clean && npm run docs-build-sass && npm run docs-build-cleancss",
+    "docs-build-cleancss": "cleancss -o docs/assets/css/style.min.css docs/assets/css/style.css",
+    "docs-build-clean": "rimraf css",
+    "docs-build-sass": "node-sass --output-style expanded docs/assets/sass/style.sass docs/assets/css/style.css",
+    "docs-build-sass-watch": "npm run docs-build-sass -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomhrtly/BulmaWP.git"
+  },
+  "author": "Tom Hartley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomhrtly/BulmaWP/issues"
+  },
+  "homepage": "https://github.com/tomhrtly/BulmaWP#readme",
+  "dependencies": {
+    "bulma": "^0.7.4",
+    "clean-css-cli": "^4.2.1",
+    "eslint": "^5.13.0",
+    "node-sass": "^4.11.0",
+    "postcss-cli": "^6.1.1",
+    "rimraf": "^2.6.3"
+  }
+}

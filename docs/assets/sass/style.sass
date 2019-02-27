@@ -1,4 +1,5 @@
-@import "../bulma/utilities/all"
+@import "../../../node_modules/bulma/sass/utilities/initial-variables"
+@import "../../../node_modules/bulma/sass/utilities/mixins"
 
 $pre-background: #282c34
 $pre: #abb2bf
@@ -71,7 +72,22 @@ section
     right: auto
 
 $custom-colors: ("twitter": ($twitter, $twitter-invert))
-$colors: mergeColorMaps(("dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert)), $custom-colors)
-$shades: mergeColorMaps(("grey-dark": $grey-dark, "grey": $grey), $custom-shades) !default
 
-@import "../bulma/main"
+@import "../../../node_modules/bulma/sass/utilities/functions"
+@import "../../../node_modules/bulma/sass/utilities/derived-variables"
+@import "../../../node_modules/bulma/sass/utilities/controls"
+@import "../../../node_modules/bulma/sass/base/minireset"
+@import "../../../node_modules/bulma/sass/base/generic"
+@import "../../../node_modules/bulma/sass/base/helpers"
+@import "../../../node_modules/bulma/sass/elements/button"
+@import "../../../node_modules/bulma/sass/elements/container"
+@import "../../../node_modules/bulma/sass/elements/content"
+@import "../../../node_modules/bulma/sass/elements/form"
+@import "../../../node_modules/bulma/sass/elements/icon"
+@import "../../../node_modules/bulma/sass/elements/title"
+@import "../../../node_modules/bulma/sass/components/media"
+@import "../../../node_modules/bulma/sass/components/navbar"
+@import "../../../node_modules/bulma/sass/grid/columns"
+@import "../../../node_modules/bulma/sass/layout/hero"
+@import "../../../node_modules/bulma/sass/layout/section"
+@import "../../../node_modules/bulma/sass/layout/footer"
