@@ -2,10 +2,6 @@
   "name": "bulmawp",
   "version": "0.4.0",
   "description": "A free WordPress starter theme based on the Bulma CSS framework.",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "docs-build": "npm run docs-build-clean && npm run docs-build-sass && npm run docs-build-cleancss",
     "docs-build-cleancss": "cleancss -o docs/assets/css/style.min.css docs/assets/css/style.css",
