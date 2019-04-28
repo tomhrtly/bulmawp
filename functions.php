@@ -137,7 +137,7 @@ function bulmawp_enqueue() {
 
 	wp_deregister_script( 'jquery' );
 
-	wp_enqueue_script( 'bulmawp-script', get_template_directory_uri() . '/assets/js/script.min.js', 'jquery', '0.4.0', true );
+	wp_enqueue_script( 'bulmawp-script', get_template_directory_uri() . '/assets/dist/js/script.min.js', '', '0.4.0', true );
 
 	if( is_single() && comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
