@@ -4,6 +4,8 @@
  * @since 0.1.0
  * @version 0.4.0
  */
+
+if ( ! defined( 'ABSPATH' ) ) :	die; endif; // Exit if accessed directly.
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

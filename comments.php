@@ -5,6 +5,8 @@
  * @version 0.4.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) :	die; endif; // Exit if accessed directly.
+
 if ( comments_open() ) :
 ?>
   <h3 id="comments" class="subtitle"><?php _e( 'Comments', 'bulmawp' ); ?></h3>

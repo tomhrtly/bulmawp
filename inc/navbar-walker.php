@@ -5,6 +5,8 @@
  * @version 0.4.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) :	die; endif; // Exit if accessed directly.
+
 if ( ! class_exists( 'BulmaWP_Navbar_Walker' ) ) {
 	/**
 	 * BulmaWP_Navbar_Walker class.

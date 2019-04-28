@@ -5,6 +5,8 @@
  * @version 0.4.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) :	die; endif; // Exit if accessed directly.
+
 get_header();
 ?>
   <div class="column is-9">

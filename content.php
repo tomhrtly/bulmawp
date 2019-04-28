@@ -4,6 +4,8 @@
  * @since 0.1.0
  * @version 0.4.0
  */
+
+if ( ! defined( 'ABSPATH' ) ) :	die; endif; // Exit if accessed directly.
 ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
