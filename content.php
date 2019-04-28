@@ -10,9 +10,9 @@
   <div class="content">
     <p class="is-size-7 <?php if( has_tag() ) : echo 'is-marginless'; endif; ?>">
       <?php
-      echo __( 'In ' );
+      _e( 'In ' );
       the_category( ', ' );
-      echo __( ' by ' );
+      _e( ' by ' );
       the_author();
       echo ' / ';
       echo apply_filters( 'the_date', get_the_date(), get_option( 'date_format' ), '', '' );

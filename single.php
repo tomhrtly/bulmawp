@@ -17,9 +17,9 @@ get_header();
         <div class="content">
           <p class="is-size-7">
             <?php
-            echo __( 'In ' );
+            _e( 'In ' );
             the_category( ', ' );
-            echo __( ' by ' );
+            _e( ' by ' );
             the_author();
             echo ' ';
             the_date( '', '/ ' );
@@ -34,7 +34,7 @@ get_header();
 					<div class="level is-mobile">
 						<div class="level-left">
 							<div class="level-item">
-								<p class="is-size-7"><?php echo __( 'Tags:' ); ?></p>
+								<p class="is-size-7"><?php _e( 'Tags:' ); ?></p>
 							</div>
 							<div class="level-item">
 								<div class="tags">

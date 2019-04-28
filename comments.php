@@ -7,7 +7,7 @@
 
 if ( comments_open() ) :
 ?>
-  <h3 id="comments" class="subtitle"><?php echo __( 'Comments' ); ?></h3>
+  <h3 id="comments" class="subtitle"><?php _e( 'Comments' ); ?></h3>
   <?php
   if ( have_comments() ) :
     wp_list_comments( array(

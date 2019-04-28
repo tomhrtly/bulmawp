@@ -11,7 +11,7 @@
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
-          <p>&copy; <?php echo get_bloginfo( 'name' ); ?> <?php echo date( 'Y' ); ?><?php echo __( '. All rights reserved.' ); ?></p>
+          <p>&copy; <?php echo get_bloginfo( 'name' ); ?> <?php echo date( 'Y' ); ?><?php _e( '. All rights reserved.' ); ?></p>
           <a href="https://bulma.io">
             <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
           </a>
