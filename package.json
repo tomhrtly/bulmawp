@@ -3,7 +3,8 @@
   "version": "0.4.0",
   "description": "A free WordPress starter theme based on the Bulma CSS framework.",
   "scripts": {
-    "build": "npm-run-all css js",
+    "build": "npm-run-all css js copy",
+    "copy": "cp -R node_modules/@fortawesome/fontawesome-free/webfonts assets/dist/fonts/",
     "css": "npm-run-all css-lint css-compile css-minify",
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true assets/src/sass/style.sass assets/dist/css/style.css",
     "css-lint": "stylelint 'assets/src/sass/*.sass'",
@@ -28,7 +29,9 @@
   },
   "homepage": "https://github.com/tomhrtly/BulmaWP#readme",
   "dependencies": {
-    "bulma": "^0.7.4"
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "bulma": "^0.7.4",
+    "jquery": "^3.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
