@@ -19,8 +19,10 @@
           <a class="navbar-item" href="<?php echo site_url(); ?>">
             <?php
             $logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-            if( has_custom_logo() ) : echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
-            else : echo '<h1 class="subtitle">' . get_bloginfo( 'name' ) . '</h1>';
+            if( has_custom_logo() ) :
+              echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+            else :
+              echo '<h1 class="subtitle">' . get_bloginfo( 'name' ) . '</h1>';
             endif;
             ?>
           </a>

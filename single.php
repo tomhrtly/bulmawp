@@ -17,11 +17,11 @@ get_header();
         <div class="content">
           <p class="is-size-7">
             <?php
-            _e( 'In ' );
+            _e( 'In ', 'bulmawp' );
             the_category( ', ' );
-            _e( ' by ' );
+            _e( ' by ', 'bulmawp' );
             the_author();
-            echo ' ';
+            _e( ' ', 'bulmawp' );
             the_date( '', '/ ' );
             ?> / <a href="<?php the_permalink(); ?>#comments"><?php comments_number( '0 comments', '1 comment', '% comments' ); ?></a>
           </p>
@@ -34,7 +34,7 @@ get_header();
 					<div class="level is-mobile">
 						<div class="level-left">
 							<div class="level-item">
-								<p class="is-size-7"><?php _e( 'Tags:' ); ?></p>
+								<p class="is-size-7"><?php _e( 'Tags:', 'bulmawp' ); ?></p>
 							</div>
 							<div class="level-item">
 								<div class="tags">

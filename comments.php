@@ -7,18 +7,17 @@
 
 if ( comments_open() ) :
 ?>
-  <h3 id="comments" class="subtitle"><?php _e( 'Comments' ); ?></h3>
+  <h3 id="comments" class="subtitle"><?php _e( 'Comments', 'bulmawp' ); ?></h3>
   <?php
   if ( have_comments() ) :
     wp_list_comments( array(
       'max_depth'     => '3',
-      'avatar_size'   => '128',
-      'walker'        => new BulmaWP_Comment_Walker(),
+      'walker'        => new BulmaWP_Comment_Walker()
     ) );
   endif;
 
   comment_form( array(
-    'label_submit'            => __( 'Post comment' ),
+    'label_submit'            => __( 'Post comment', 'bulmawp' ),
     'class_submit'            => 'button',
     'comment_notes_before'    => '',
     'title_reply'             => '',
@@ -30,7 +29,7 @@ if ( comments_open() ) :
     'fields'                  => array(
       'author'    => '<div class="field"><p class="control has-icons-left"><input name="author" class="input" type="text" placeholder="Name" required><span class="icon is-small is-left"><i class="fa fa-user"></i></span></p></div>',
       'email'     => '<div class="field"><p class="control has-icons-left"><input name="email" class="input" type="email" placeholder="Email address" required><span class="icon is-small is-left"><i class="fa fa-envelope"></i></span></p></div>',
-      'url'       => '<div class="field"><p class="control has-icons-left"><input name="url" class="input" type="url" placeholder="Website address"><span class="icon is-small is-left"><i class="fa fa-globe"></i></span></p></div>',
+      'url'       => '<div class="field"><p class="control has-icons-left"><input name="url" class="input" type="url" placeholder="Website address"><span class="icon is-small is-left"><i class="fa fa-globe"></i></span></p></div>'
     ),
     'comment_field'           => '<article class="media field"><div class="media-content"><div class="field"><p class="control"><textarea class="textarea" name="comment" placeholder="Add a comment..." required></textarea></p></div></div></article>'
   ) );
