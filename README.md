@@ -1,3 +1,4 @@
+**Note: This repository is no longer maintaned and is now archived.**
 <a href="https://bulmawp.io"><img src="https://bulmawp.io/assets/img/logo-dark.png" width="421" height="80" alt="BulmaWP Logo"></a>
 
 A free WordPress starter theme based on the Bulma CSS framework.
